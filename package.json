@@ -1,6 +1,6 @@
 {
   "name": "k-react-native-core",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.1",
   "license": "MIT",
   "author": {
     "name": "Leo Wang",
@@ -15,8 +15,7 @@
     "javascript"
   ],
   "dependencies": {
-    "events": "^1.0.2",
-    "promise": "^7.0.4"
+    "events": "^1.0.2"
   },
   "homepage": "https://github.com/leowang721/k-react-native-core",
   "repository": "git://github.com/leowang721/k-react-native-core"
