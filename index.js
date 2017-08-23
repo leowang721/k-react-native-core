@@ -4,11 +4,8 @@
  * @author Leo Wang(leowang721@gmail.com)
  */
 
-var main = {
-    errorHandler: require('./lib/errorHandler'),
-    eventBus: require('./lib/eventBus'),
-    util: require('./lib/util'),
-    Position: require('./lib/Position')
-};
-
-module.exports = main;
+export errorHandler from './lib/errorHandler'
+export eventBus from './lib/eventBus'
+export util from './lib/util'
+export Position from './lib/Position'
+export number from './lib/number'
