@@ -120,7 +120,7 @@ export const transferNumberByType = {
     return CHINESE_STEMS[first - 1] + CHINESE_BRANCHES[second - 1]
   },
   // 天干
-  chineseStems (num) {
+  chineseHeavenlyStem (num) {
     if (num < 1) {
       return
     }
@@ -129,7 +129,7 @@ export const transferNumberByType = {
     return str.replace(/\d/g, (n, i) => CHINESE_STEMS[i === last ? n : n - 1])
   },
   // 地支
-  chineseBranches (num) {
+  chineseEarthlyBranch (num) {
     if (num < 0) {
       return
     }
