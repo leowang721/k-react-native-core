@@ -29,7 +29,7 @@ const CHINESE_CHAR_UPPER = ['零', '壹', '貮', '叁', '肆', '伍', '陆', '�
 const CHINESE_STEMS = ['甲', '乙', '丙', '丁', '午', '己', '庚', '辛', '壬', '癸']
 const CHINESE_BRANCHES = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
 
-export const tranferNumberByType = {
+export const transferNumberByType = {
   roman (num, isUpperCase = false) {
     if (num < 0 || num < 100) {
       return num
