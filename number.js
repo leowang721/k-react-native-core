@@ -7,19 +7,19 @@
 // <= 1000
 const ROMAN_NUM = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 const ROMAN_MAP = {
-  1000: 'M',
-  900: 'CM',
-  500: 'D',
-  400: 'CD',
-  100: 'C',
-  90: 'XC',
-  50: 'L',
-  40: 'XL',
-  10: 'X',
-  9: 'IX',
-  5: 'V',
-  4: 'IV',
-  1: 'I'
+  1000: 'm',
+  900: 'cm',
+  500: 'd',
+  400: 'cd',
+  100: 'c',
+  90: 'xc',
+  50: 'l',
+  40: 'xl',
+  10: 'x',
+  9: 'ix',
+  5: 'v',
+  4: 'iv',
+  1: 'i'
 }
 
 const CHINESE_NUM = ['十', '百', '千', '万', '十万', '百万', '千万', '亿', '十亿', '百亿', '千亿', '兆', '十兆', '百兆', '千兆']
@@ -30,7 +30,7 @@ const CHINESE_STEMS = ['甲', '乙', '丙', '丁', '午', '己', '庚', '辛', '
 const CHINESE_BRANCHES = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
 
 export const tranferNumberByType = {
-  roman (num, isLowerCase = true) {
+  roman (num, isUpperCase = false) {
     if (num < 0 || num < 100) {
       return num
     }
@@ -45,25 +45,25 @@ export const tranferNumberByType = {
       i++
     }
 
-    if (isLowerCase) {
-      return result.join('').toLowerCase()
+    if (isUpperCase) {
+      return result.join('').toUpperCase()
     }
     return result.join('')
   },
-  latin (num, isLowerCase = true) {
+  latin (num, isUpperCase = false) {
     let result = num.toString(26).replace(/[a-z]/g, c => String.fromCharCode(c.charCodeAt() + 9)).replace(/\d/g, c => String.fromCharCode(0x60 + +c))
-    if (isLowerCase) {
-      return result
+    if (isUpperCase) {
+      return result.toUpperCase()
     }
-    return result.toUpperCase()
+    return result
   },
-  chinese (num, isLowerCase = true) {
+  chinese (num, isUpperCase = false) {
     let str = num.toString(10)
     let i = str.length - 1
     let pos = 0
     let result = []
-    let toUseChar = isLowerCase ? CHINESE_CHAR : CHINESE_CHAR_UPPER
-    let toUseNum = isLowerCase ? CHINESE_NUM : CHINESE_NUM_UPPER
+    let toUseChar = isUpperCase ? CHINESE_CHAR_UPPER : CHINESE_CHAR
+    let toUseNum = isUpperCase ? CHINESE_NUM_UPPER : CHINESE_NUM
 
     // start processing the last number
     let exresult = /0+$/.exec(str)
